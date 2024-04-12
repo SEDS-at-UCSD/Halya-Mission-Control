@@ -88,6 +88,7 @@ function App() {
 
   return (
     <div className="App">
+      <img src="http://localhost:6969/video_feed/0" alt="Video Stream" />
       <img src="http://localhost:6969/video_feed/1" alt="Video Stream" />
     </div>
   );
