@@ -3,6 +3,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  background-color: black;
 }
 
 .image_grid {
@@ -17,12 +18,17 @@ body {
   width: 100%;
   height: 100%;
   overflow:hidden;
+  box-sizing: border-box;
 }
 
 .image_grid img {
   width: 100%;
   height: 100%;
   object-fit:cover;
+}
+
+.focused {
+  border: 4px solid lightskyblue; /* Or any other style to show focus */
 }
 
 .top_bar {

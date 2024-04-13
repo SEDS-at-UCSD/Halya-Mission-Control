@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import mqtt from "mqtt";
 import { useState, useEffect } from "react";
-import ReactPlayer from "react-player";
 import Toolbar from './toolbar.js'
 
 function App() {
@@ -17,13 +16,14 @@ function App() {
     "http://localhost:6969/video_feed/0"
   ]
 
-  const [feedAmount, setFeedAmount] = useState(2);
+  const [feedAmount, setFeedAmount] = useState(4);
 
   const [client, setClient] = useState(null);
   const [connectStatus, setConnectStatus] = useState("Not connected");
   const [boardData, setBoardData] = useState({});
   const [isSub, setIsSub] = useState(false);
   const [feedStates, setFeedStates] = useState([0,1,2,3]);
+  const [focusedDiv, setFocusedDiv] = useState(null);
 
   const mqttSub = (topic) => {
     if (client) {
@@ -98,25 +98,58 @@ function App() {
     }
   }, [client]);
 
-  console.log(feedStates[0])
-  console.log(video_feed_links[feedStates[0]]);
+  const handleFocus = (index) => {
+    setFocusedDiv(index);
+  };
 
   return (
     <div className="App">
-      <div className="top_bar">
-        <Toolbar>
-
-        </Toolbar>
+      <div 
+        className="top_bar"
+        onClick={()=>handleFocus(null)}>
+        <Toolbar />
       </div>
       <div className="image_grid">
-      <div className="image_container"><img src={video_feed_links[feedStates[0]]} alt="Video Stream" /></div>
-        {feedAmount >= 2 && <div className="image_container"><img src={video_feed_links[feedStates[1]]} alt="Video Stream" /></div>}
-        {feedAmount ===4 && <div className="image_container"><img src={video_feed_links[feedStates[2]]} alt="Video Stream" /></div>}
-        {feedAmount ===4 && <div className="image_container"><img src={video_feed_links[feedStates[3]]} alt="Video Stream" /></div>}
-      </div>
+        {/* Always show the first image */}
+        <div
+          className={`image_container ${focusedDiv === 0 ? 'focused' : ''}`}
+          onClick={() => handleFocus(0)}
+          tabIndex="0" // Make div focusable
+        >
+          <img src={video_feed_links[feedStates[0]]} alt="Video Stream" />
+        </div>
 
-      
-    
+        {/* Conditionally show the second image */}
+        {feedAmount >= 2 && (
+          <div
+            className={`image_container ${focusedDiv === 1 ? 'focused' : ''}`}
+            onClick={() => handleFocus(1)}
+            tabIndex="0"
+          >
+            <img src={video_feed_links[feedStates[1]]} alt="Video Stream" />
+          </div>
+        )}
+
+        {/* Conditionally show the third and fourth images */}
+        {feedAmount === 4 && [
+          <div
+            className={`image_container ${focusedDiv === 2 ? 'focused' : ''}`}
+            onClick={() => handleFocus(2)}
+            tabIndex="0"
+            key="image3"
+          >
+            <img src={video_feed_links[feedStates[2]]} alt="Video Stream" />
+          </div>,
+          <div
+            className={`image_container ${focusedDiv === 3 ? 'focused' : ''}`}
+            onClick={() => handleFocus(3)}
+            tabIndex="0"
+            key="image4"
+          >
+            <img src={video_feed_links[feedStates[3]]} alt="Video Stream" />
+          </div>,
+        ]}
+      </div>
     </div>
   );
 }
