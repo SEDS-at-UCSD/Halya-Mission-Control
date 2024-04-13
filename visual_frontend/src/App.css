@@ -31,6 +31,10 @@ body {
   border: 4px solid lightskyblue; /* Or any other style to show focus */
 }
 
+.image_container:focus {
+  outline: none;
+}
+
 .top_bar {
   height: 10vh;
 }

@@ -102,6 +102,37 @@ function App() {
     setFocusedDiv(index);
   };
 
+  const changeFeed = (newFeed) => {
+    if (focusedDiv === null) {
+      return;
+    }
+    setFeedStates((prev)=>{
+      let newState = [...prev];
+      console.log(focusedDiv);
+      newState[focusedDiv] = newFeed;
+      console.log(newState);
+      return newState;
+    });
+  }
+
+  useEffect(() => {
+    // Define the event handler
+    const handleKeyPress = (event) => {
+      if (event.key === '1' || event.key === '2' || event.key === '3' || event.key === '4' || event.key === '5') {
+        const newFeed = parseInt(event.key) - 1;
+        changeFeed(newFeed);
+      }
+    };
+
+    // Attach the event handler to the document
+    document.addEventListener('keydown', handleKeyPress);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [focusedDiv]);
+
   return (
     <div className="App">
       <div 
