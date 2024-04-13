@@ -38,3 +38,65 @@ body {
 .top_bar {
   height: 10vh;
 }
+
+/* In your App.css or any other CSS file */
+
+/* Increase the size of the buttons and make them connected */
+.top_bar {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  padding-left: 10px; /* Add padding on the left to create space */
+}
+
+/* Rectangular textbox */
+.view-textbox {
+  min-width: 100px; /* Set a minimum width to make it rectangular */
+  height: 10vh; /* Set the height to make it the same size as buttons */
+  background-color: #007bff; /* Blue color */
+  color: #ffffff; /* White text color */
+  border: 2px solid #000000; /* Black border color */
+  font-size: 2rem; /* Increase font size */
+  font-weight: bold; /* Make font bold */
+}
+
+/* Style the text inside the textbox */
+.view-textbox::placeholder {
+  color: #ffffff; /* White placeholder text color */
+}
+
+/* Increase the size of the buttons and make them connected */
+.button-group {
+  display: flex; /* Use flexbox to align buttons */
+}
+
+/* Square buttons */
+.button-group .btn {
+  /*flex: 1;  Make all buttons in the group evenly sized */
+  min-width: 100px; /* Set a minimum width to make the buttons square */
+  height: 10vh; /* Set the height to make the buttons square */
+  background-color: #007bff; /* Blue color */
+  color: #ffffff; /* White text color */
+  border-color: #007bff; /* Blue border color */
+  font-size: 2rem; /* Increase font size */
+  font-weight: bold; /* Make font bold */
+  padding-top: 0; /* Remove padding from the top */
+}
+
+/* Style the text inside the buttons */
+.button-group .btn span {
+  font-size: inherit; /* Inherit the font size */
+  font-weight: inherit; /* Inherit the font weight */
+}
+
+/* Hover effect */
+.button-group .btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3; /* Darker blue border on hover */
+}
+
+/* Active state */
+.button-group .btn:active,
+.button-group .btn.active {
+  background-color: #0056b3; /* Darker blue when active */
+  border-color: #0056b3; /* Darker blue border when active */
+}

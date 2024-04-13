@@ -4,18 +4,20 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 
 function ToolbarBasicExample() {
   return (
-    <ButtonToolbar aria-label="Toolbar with button groups">
-      <ButtonGroup className="me-2" aria-label="First group">
-        <Button>1</Button> <Button>2</Button> <Button>3</Button>{' '}
-        <Button>4</Button>
+    <div className="top_bar">
+    <div className="top_bar_left">
+      <input type="text" className="view-textbox" value="View" readOnly />
+    </div>
+    <div className="top_bar_right">
+      <ButtonGroup className="me-2 button-group" aria-label="First group">
+        <Button><span>1</span></Button> 
+        <Button><span>2</span></Button> 
+        <Button><span>3</span></Button>
+        <Button><span>4</span></Button>
+        <Button><span>5</span></Button>
       </ButtonGroup>
-      <ButtonGroup className="me-2" aria-label="Second group">
-        <Button>5</Button> <Button>6</Button> <Button>7</Button>
-      </ButtonGroup>
-      <ButtonGroup aria-label="Third group">
-        <Button>8</Button>
-      </ButtonGroup>
-    </ButtonToolbar>
+    </div>
+  </div>
   );
 }
 
