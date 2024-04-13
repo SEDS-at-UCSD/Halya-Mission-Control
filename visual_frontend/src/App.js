@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import mqtt from "mqtt";
 import { useState, useEffect } from "react";
+import ReactPlayer from "react-player";
+import Toolbar from './toolbar.js'
 
 function App() {
   const connectionurl = "ws://169.254.32.191:9002";
@@ -102,7 +104,9 @@ function App() {
   return (
     <div className="App">
       <div className="top_bar">
+        <Toolbar>
 
+        </Toolbar>
       </div>
       <div className="image_grid">
       <div className="image_container"><img src={video_feed_links[feedStates[0]]} alt="Video Stream" /></div>
@@ -110,6 +114,9 @@ function App() {
         {feedAmount ===4 && <div className="image_container"><img src={video_feed_links[feedStates[2]]} alt="Video Stream" /></div>}
         {feedAmount ===4 && <div className="image_container"><img src={video_feed_links[feedStates[3]]} alt="Video Stream" /></div>}
       </div>
+
+      
+    
     </div>
   );
 }
