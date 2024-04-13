@@ -15,7 +15,7 @@ function App() {
     "http://localhost:6969/video_feed/0"
   ]
 
-  const [feedAmount, setFeedAmount] = useState(4);
+  const [feedAmount, setFeedAmount] = useState(2);
 
   const [client, setClient] = useState(null);
   const [connectStatus, setConnectStatus] = useState("Not connected");
@@ -101,11 +101,14 @@ function App() {
 
   return (
     <div className="App">
+      <div className="top_bar">
+
+      </div>
       <div className="image_grid">
-        <img src={video_feed_links[feedStates[0]]} alt="Video Stream" />
-        {feedAmount >= 2 && <img src={video_feed_links[feedStates[1]]} alt="Video Stream" />}
-        {feedAmount === 4 && <img src={video_feed_links[feedStates[2]]} alt="Video Stream" />}
-        {feedAmount === 4 && <img src={video_feed_links[feedStates[3]]} alt="Video Stream" />}
+      <div className="image_container"><img src={video_feed_links[feedStates[0]]} alt="Video Stream" /></div>
+        {feedAmount >= 2 && <div className="image_container"><img src={video_feed_links[feedStates[1]]} alt="Video Stream" /></div>}
+        {feedAmount ===4 && <div className="image_container"><img src={video_feed_links[feedStates[2]]} alt="Video Stream" /></div>}
+        {feedAmount ===4 && <div className="image_container"><img src={video_feed_links[feedStates[3]]} alt="Video Stream" /></div>}
       </div>
     </div>
   );
