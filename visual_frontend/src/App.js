@@ -112,9 +112,7 @@ function App() {
     }
     setFeedStates((prev)=>{
       let newState = [...prev];
-      console.log(focusedDiv);
       newState[focusedDiv] = newFeed;
-      console.log(newState);
       return newState;
     });
   }
@@ -139,11 +137,7 @@ function App() {
 
   return (
     <div className="App">
-      <div 
-        className="top_bar"
-      >
-        <Toolbar setFeed={changeFeed}/>
-      </div>
+      <Toolbar setFeed={changeFeed}/>
       <div className="image_grid">
         {/* Always show the first image */}
         <div
