@@ -138,7 +138,18 @@ function App() {
   return (
     <div className="App">
       <div className="top_bar">
-        <Toolbar setFeed={changeFeed}/>
+        <Toolbar 
+          setFeed={changeFeed}
+          values={
+            feedAmount === 1 ?
+              feedStates[0]
+            :
+              feedAmount === 2 ?
+                feedStates[0].concat(feedStates[1])
+              :
+                feedStates
+          }
+        />
       </div>
       <div className="image_grid">
         {/* Always show the first image */}

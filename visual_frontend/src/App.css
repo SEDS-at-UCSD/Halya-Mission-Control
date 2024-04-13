@@ -100,6 +100,11 @@ body {
   font-family: "Jura", sans-serif; /* Set font to Luciana */
 }
 
+.shown {
+  background-color: #3D5A80 !important;
+  border-color: #3D5A80 !important;
+}
+
 /* Style the text inside the buttons */
 .button-group .btn span {
   font-size: inherit; /* Inherit the font size */
