@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 
-function ToolbarBasicExample() {
+const Toolbar = ({setFeed}) => {
   return (
     <div className="top_bar">
     <div className="top_bar_left">
@@ -10,17 +10,15 @@ function ToolbarBasicExample() {
     </div>
     <div className="top_bar_right">
       <ButtonGroup className="me-2 button-group" aria-label="First group">
-        <Button><span>1</span></Button> 
-        <Button><span>2</span></Button> 
-        <Button><span>3</span></Button>
-        <Button><span>4</span></Button>
-        <Button><span>5</span></Button>
+        <Button onClick={()=>setFeed(0)}><span>1</span></Button> 
+        <Button onClick={()=>setFeed(1)}><span>2</span></Button> 
+        <Button onClick={()=>setFeed(2)}><span>3</span></Button>
+        <Button onClick={()=>setFeed(3)}><span>4</span></Button>
+        <Button onClick={()=>setFeed(4)}><span>5</span></Button>
       </ButtonGroup>
     </div>
   </div>
   );
 }
 
-
-
-export default ToolbarBasicExample;
+export default Toolbar;

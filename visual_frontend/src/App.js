@@ -138,7 +138,7 @@ function App() {
       <div 
         className="top_bar"
         onClick={()=>handleFocus(null)}>
-        <Toolbar />
+        <Toolbar setFeed={changeFeed}/>
       </div>
       <div className="image_grid">
         {/* Always show the first image */}
