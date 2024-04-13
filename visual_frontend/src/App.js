@@ -99,7 +99,11 @@ function App() {
   }, [client]);
 
   const handleFocus = (index) => {
-    setFocusedDiv(index);
+    if (index === focusedDiv) {
+      setFocusedDiv(null);
+    } else {
+      setFocusedDiv(index);
+    }
   };
 
   const changeFeed = (newFeed) => {
@@ -137,7 +141,7 @@ function App() {
     <div className="App">
       <div 
         className="top_bar"
-        onClick={()=>handleFocus(null)}>
+      >
         <Toolbar setFeed={changeFeed}/>
       </div>
       <div className="image_grid">
