@@ -137,7 +137,9 @@ function App() {
 
   return (
     <div className="App">
-      <Toolbar setFeed={changeFeed}/>
+      <div className="top_bar">
+        <Toolbar setFeed={changeFeed}/>
+      </div>
       <div className="image_grid">
         {/* Always show the first image */}
         <div
