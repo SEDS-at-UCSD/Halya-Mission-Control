@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import mqtt from "mqtt";
 import { useState, useEffect } from "react";
-import ReactPlayer from "react-player";
 
 function App() {
   const connectionurl = "ws://169.254.32.191:9002";
