@@ -6,12 +6,23 @@ import ReactPlayer from "react-player";
 
 function App() {
   const connectionurl = "ws://169.254.32.191:9002";
-  const topics_list = []
+  const topics_list = [];
+
+  const video_feed_links = [
+    "http://localhost:6969/video_feed/0",
+    "http://localhost:6969/video_feed/1",
+    "http://localhost:6969/video_feed/0",
+    "http://localhost:6969/video_feed/1",
+    "http://localhost:6969/video_feed/0"
+  ]
+
+  const [feedAmount, setFeedAmount] = useState(4);
 
   const [client, setClient] = useState(null);
   const [connectStatus, setConnectStatus] = useState("Not connected");
   const [boardData, setBoardData] = useState({});
   const [isSub, setIsSub] = useState(false);
+  const [feedStates, setFeedStates] = useState([0,1,2,3]);
 
   const mqttSub = (topic) => {
     if (client) {
@@ -86,10 +97,17 @@ function App() {
     }
   }, [client]);
 
+  console.log(feedStates[0])
+  console.log(video_feed_links[feedStates[0]]);
+
   return (
     <div className="App">
-      <img src="http://localhost:6969/video_feed/0" alt="Video Stream" />
-      <img src="http://localhost:6969/video_feed/1" alt="Video Stream" />
+      <div className="image_grid">
+        <img src={video_feed_links[feedStates[0]]} alt="Video Stream" />
+        {feedAmount >= 2 && <img src={video_feed_links[feedStates[1]]} alt="Video Stream" />}
+        {feedAmount === 4 && <img src={video_feed_links[feedStates[2]]} alt="Video Stream" />}
+        {feedAmount === 4 && <img src={video_feed_links[feedStates[3]]} alt="Video Stream" />}
+      </div>
     </div>
   );
 }
