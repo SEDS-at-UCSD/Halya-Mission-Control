@@ -16,7 +16,7 @@ function App() {
     "http://localhost:6969/video_feed/0"
   ]
 
-  const [feedAmount, setFeedAmount] = useState(4);
+  const [feedAmount, setFeedAmount] = useState(2);
 
   const [client, setClient] = useState(null);
   const [connectStatus, setConnectStatus] = useState("Not connected");
@@ -124,6 +124,15 @@ function App() {
         const newFeed = parseInt(event.key) - 1;
         changeFeed(newFeed);
       }
+      if (event.key === 'j') {
+        setFeedAmount(1);
+      }
+      if (event.key === 'k') {
+        setFeedAmount(2);
+      }
+      if (event.key === 'l') {
+        setFeedAmount(4);
+      }
     };
 
     // Attach the event handler to the document
@@ -142,16 +151,16 @@ function App() {
           setFeed={changeFeed}
           values={
             feedAmount === 1 ?
-              feedStates[0]
+              [feedStates[0]]
             :
               feedAmount === 2 ?
-                feedStates[0].concat(feedStates[1])
+                [feedStates[0],feedStates[1]]
               :
                 feedStates
           }
         />
       </div>
-      <div className="image_grid">
+      <div className={feedAmount === 1 ? "single_image" : "image_grid"}>
         {/* Always show the first image */}
         <div
           className={`image_container ${focusedDiv === 0 ? 'focused' : ''}`}

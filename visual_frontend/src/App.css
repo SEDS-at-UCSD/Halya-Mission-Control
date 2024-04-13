@@ -6,12 +6,17 @@ body {
   background-color: #141414;
 }
 
+.single_image {
+  width: 100vw;
+  height: 80vh;
+}
+
 .image_grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0px; /* Adjust the gap between images */
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
 }
 
 .image_container {
