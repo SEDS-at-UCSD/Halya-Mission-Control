@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import mqtt from "mqtt";
 import { useState, useEffect } from "react";
 import Toolbar from './toolbar.js'
 
 function App() {
+  // States to manually set
   const connectionurl = "ws://169.254.32.191:9002";
   const topics_list = [];
-
   const video_feed_links = [
     "http://localhost:6969/video_feed/0",
     "http://localhost:6969/video_feed/1",
@@ -16,8 +15,8 @@ function App() {
     "http://localhost:6969/video_feed/0"
   ]
 
+  // States used by codes
   const [feedAmount, setFeedAmount] = useState(2);
-
   const [client, setClient] = useState(null);
   const [connectStatus, setConnectStatus] = useState("Not connected");
   const [boardData, setBoardData] = useState({});
