@@ -4,6 +4,8 @@ import mqtt from "mqtt";
 import { useState, useEffect } from "react";
 import Toolbar from './toolbar.js'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function App() {
   const connectionurl = "ws://169.254.32.191:9002";
   const topics_list = [];

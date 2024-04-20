@@ -1,6 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
+
+
 
 const Toolbar = ({setFeed, values}) => {
   return (
@@ -17,6 +22,17 @@ const Toolbar = ({setFeed, values}) => {
         <Button onClick={()=>setFeed(4)} className={values.includes(4) ? "shown" : ""}><span>5</span></Button>
       </ButtonGroup>
     </div>
+
+    <div className="view_switch">
+    <ButtonGroup className="me-2 button-group" aria-label="First group">
+        <Button><img></img></Button> 
+        <Button><img></img></Button> 
+        
+      </ButtonGroup>
+    </div>
+
+    
+
   </div>
   );
 }
