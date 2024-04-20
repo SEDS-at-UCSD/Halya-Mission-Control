@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -22,7 +23,7 @@ const Toolbar = ({setFeed, values}) => {
 
     <div className="view_switch">
     <ButtonGroup className="me-2 button-group" aria-label="First group">
-        <Button><img></img></Button> 
+        <Button> <FontAwesomeIcon icon={faTableCellsLarge} /> </Button> 
         <Button><img></img></Button> 
         
       </ButtonGroup>
