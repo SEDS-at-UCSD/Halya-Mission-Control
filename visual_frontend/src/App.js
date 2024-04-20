@@ -2,6 +2,9 @@ import './App.css';
 import mqtt from "mqtt";
 import { useState, useEffect } from "react";
 import Toolbar from './toolbar.js'
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -201,6 +204,9 @@ function App() {
             <img src={video_feed_links[feedStates[3]]} alt="Video Stream" />
           </div>,
         ]}
+      </div>
+      <div className="bottom_bar">
+        <ProgressBar className="progress_bar" now={60}/>
       </div>
     </div>
   );

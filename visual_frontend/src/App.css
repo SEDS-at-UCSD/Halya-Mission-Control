@@ -1,14 +1,24 @@
+
+
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #141414;
+  background-color: #141414 !important;
 }
 
 .single_image {
   width: 100vw;
   height: 80vh;
+}
+
+.bottom_bar {
+  height: 12vh;
+}
+
+.top_bar {
+  height: 8vh;
 }
 
 .image_grid {
@@ -41,20 +51,12 @@ body {
   outline: none;
 }
 
-.top_bar {
-  height: 10vh;
-}
-
 /* In your App.css or any other CSS file */
 
 /* Increase the size of the buttons and make them connected */
 .top_bar {
   display: flex;
   align-items: center; /* Center items vertically */
-}
-
-.top_bar_left {
-  height: 100%;
 }
 
 .top_bar_right {
@@ -99,16 +101,20 @@ body {
   min-height: 100%;
   background-color: #98C1D9; /* Blue color */
   color: #000000; /* White text color */
-  border-color: #98C1D9; /* Blue border color */
+  border-color: black; /* Blue border color */
   font-size: 2rem; /* Increase font size */
   font-weight: bold; /* Make font bold */
   padding-top: 0; /* Remove padding from the top */
   font-family: "Jura", sans-serif; /* Set font to Luciana */
+  border-radius: 0px;
+}
+
+.button-group .last_btn {
+  border-radius: 5px; 
 }
 
 .shown {
   background-color: #3D5A80 !important;
-  border-color: #3D5A80 !important;
 }
 
 /* Style the text inside the buttons */
@@ -128,4 +134,10 @@ body {
 .button-group .btn.active {
   background-color: #3D5A80; /* Darker blue when active */
   border-color: #3D5A80; /* Darker blue border when active */
+}
+
+.progress_bar {
+  width: 60%;
+  margin-top: 5vh;
+  margin-left: 10px;
 }
