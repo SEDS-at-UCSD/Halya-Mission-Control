@@ -24,6 +24,7 @@ body {
   height: 100%;
   overflow:hidden;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .image_grid img {
