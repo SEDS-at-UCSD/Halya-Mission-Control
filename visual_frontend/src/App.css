@@ -142,6 +142,10 @@ body {
   margin-left: 10px;
 }
 
+
 .view_switch {
-  margin-left: auto; /* Move the button grid to the right */
+  position: absolute;
+  height: 8vh;
+  top: 0px;
+  right: 0px;
 }

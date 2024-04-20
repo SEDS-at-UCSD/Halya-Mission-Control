@@ -6,6 +6,8 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function App() {
@@ -153,6 +155,7 @@ function App() {
       <div className="top_bar">
         <Toolbar 
           setFeed={changeFeed}
+          setFeedAmount={setFeedAmount}
           values={
             feedAmount === 1 ?
               [feedStates[0]]
