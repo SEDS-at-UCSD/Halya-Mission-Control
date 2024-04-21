@@ -17,7 +17,7 @@ function App() {
     "http://localhost:6969/video_feed/1",
     "http://localhost:6969/video_feed/0",
     "http://localhost:6969/video_feed/1",
-    "http://localhost:6969/video_feed/0"
+    "http://localhost:6969/video_feed/2"
   ]
 
   // States used by codes
@@ -206,7 +206,8 @@ function App() {
         ]}
       </div>
       <div className="bottom_bar">
-        <ProgressBar className="progress_bar" now={60}/>
+        <ProgressBar className="progress_bar" now={0}/>
+        <div className="vertical_line" style={{'left': '5%'}}></div>
       </div>
     </div>
   );
