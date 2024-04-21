@@ -84,13 +84,13 @@ body {
 }
 
 /* Increase the size of the buttons and make them connected */
-.button-group {
+.button-group, .view-button-group {
   display: flex; /* Use flexbox to align buttons */
   height: 100%;
 }
 
 /* Square buttons */
-.button-group .btn {
+.button-group .btn, .view-button-group .btn {
   /*flex: 1;  Make all buttons in the group evenly sized */
   min-width: 100px; /* Set a minimum width to make the buttons square */
   height: 100%; /* Set the height to make the buttons square */
@@ -126,8 +126,8 @@ body {
 }
 
 /* Active state */
-.button-group .btn:active,
-.button-group .btn.active {
+.button-group .btn:active, .button-group .btn.active,
+.view-button-group .btn:active, .view-button-group .btn.active {
   background-color: #3D5A80; /* Darker blue when active */
   border-color: #3D5A80; /* Darker blue border when active */
 }
@@ -146,4 +146,12 @@ body {
   position: absolute;
   bottom: 4vh;
   background: black;
+}
+
+
+.view_switch {
+  position: absolute;
+  height: 8vh;
+  top: 0px;
+  right: 0px;
 }
